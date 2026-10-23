@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f6f5f0" />
+    <meta name="description" content="A thoughtful, two-player game of Ultimate Tic-Tac-Toe." />
+    <title>Ultimate Tic-Tac-Toe</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="game.js" defer></script>
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="site-header">
+        <a class="wordmark" href="#top" aria-label="Ultimate Tic-Tac-Toe home">
+          <span class="wordmark-mark" aria-hidden="true"><i></i><b></b><i></i></span>
+          <span>little<span class="wordmark-dot">/</span>big</span>
+        </a>
+        <span class="header-note">A classic, nine times over</span>
+      </header>
+
+      <section class="intro" id="top" aria-labelledby="page-title">
+        <p class="eyebrow"><span class="eyebrow-line"></span> TWO PLAYERS · ONE BIG BOARD</p>
+        <h1 id="page-title">Ultimate<br /><span>Tic-Tac-Toe</span></h1>
+        <p class="intro-copy">Win a little board to claim a square on the big one.<br class="desktop-break" /> Every move decides where your opponent plays next.</p>
+      </section>
+
+      <section class="game-layout" aria-label="Ultimate Tic-Tac-Toe game">
+        <div class="board-column">
+          <div class="turnbar" aria-live="polite">
+            <div class="turn-indicator" aria-hidden="true"><span id="turn-mark">X</span></div>
+            <div class="turn-copy">
+              <span class="turn-label" id="turn-label">X TO MOVE</span>
+              <span class="turn-hint" id="turn-hint">Choose any small board to start.</span>
+            </div>
+            <span class="turn-pulse" aria-hidden="true"></span>
+          </div>
+
+          <div class="ultimate-board" id="ultimate-board" role="grid" aria-label="Ultimate Tic-Tac-Toe board"></div>
+
+          <div class="board-legend" aria-label="Board legend">
+            <span><i class="legend-dot legend-active"></i> Your board</span>
+            <span><i class="legend-dot legend-open"></i> Open board</span>
+          </div>
+        </div>
+
+        <aside class="side-panel" aria-label="Game information">
+          <section class="score-card" aria-labelledby="score-title">
+            <div class="panel-heading">
+              <h2 id="score-title">The tally</h2>
+              <span class="panel-kicker">THIS MATCH</span>
+            </div>
+            <div class="score-row">
+              <div class="score-player"><span class="score-symbol score-x">X</span><span class="score-name">Crosses</span></div>
+              <span class="score-value" id="score-x">0</span>
+            </div>
+            <div class="score-row">
+              <div class="score-player"><span class="score-symbol score-o">O</span><span class="score-name">Noughts</span></div>
+              <span class="score-value" id="score-o">0</span>
+            </div>
+            <div class="score-row score-row-draws">
+              <div class="score-player"><span class="score-symbol score-draw">=</span><span class="score-name">Draws</span></div>
+              <span class="score-value" id="score-draws">0</span>
+            </div>
+          </section>
+
+          <section class="how-card" aria-labelledby="how-title">
+            <p class="section-number">01 — HOW TO PLAY</p>
+            <h2 id="how-title">Think small.<br />Win big.</h2>
+            <ol class="rules-list">
+              <li><span>01</span><p>Win three in a row in a small board to claim its big square.</p></li>
+              <li><span>02</span><p>Your square sends your opponent to the matching small board.</p></li>
+              <li><span>03</span><p>If that board is already won or full, they can play anywhere.</p></li>
+            </ol>
+          </section>
+
+          <div class="game-actions">
+            <button class="button button-primary" id="new-round" type="button"><span>↻</span> New round</button>
+            <button class="button button-quiet" id="new-match" type="button">Reset match</button>
+          </div>
+        </aside>
+      </section>
+
+      <footer class="site-footer"><span>Make your move.</span><span>Ultimate Tic-Tac-Toe <span class="footer-dot">·</span> 2026</span></footer>
+    </main>
+  </body>
+</html>
